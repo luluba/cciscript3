@@ -38,6 +38,6 @@ def is_string_palindrome_permutation(input_string):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python 1.4.new.py INPUT_STRING STRING")
+        print("Usage: python 1.4.new.py INPUT_STRING")
     else:
         is_string_palindrome_permutation(sys.argv[1])

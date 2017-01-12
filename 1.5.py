@@ -1,38 +1,46 @@
 #!/usr/bin/python
+
 '''
-Implement a method to perform basic string compression using the counts of repeated characters. For example: the string aabcccccaaa would become a2b1c5a3. if the "compressed" string would not become smaller than the original string. your method should return the original string. You can assume the string has only upper and lower case letter(a-z)
+String Compression:
+
+Implement a method to perform basic string compression using the counts
+of repeated characters.
+For example: the string aabcccccaaa would become a2b1c5a3.
+If the "compressed" string would not become smaller than the original string,
+your method should return the original string.
+You can assume the string has only upper and lower case letter(a-z)
 '''
 
-def compress(t_str):
-	if len(t_str) == 0 or len(t_str) == 1: return t_str
-	list = []
+import sys
+
+def compress_string(input_string):
+	if len(input_string) <= 1:
+		print(input_string)
+		return input_string
+
+	new_string = ""
 	count = 1
-	for i in range(0, len(t_str)-1):
-		if t_str[i] == t_str[i+1]:
+	for i in range(0, len(input_string)-1):
+		if input_string[i] == input_string[i+1]:
 			count += 1
 		else:
-			list.append(t_str[i])
-			list.append(str(count))
+			new_string += input_string[i] + str(count)
 			count = 1
 
-		if i == len(t_str) - 2:
-			list.append(t_str[-1])
-			list.append(str(count))
-	
-	new_str = "".join(list)
-	
-	if len(new_str) > len(t_str):
-		return t_str
-	else:
-		return new_str
+		if i == len(input_string) - 2:
+			new_string += input_string[-1] + str(count)
+			break
 
-def main():
-	test = "aabcccccaaa"
-	test1 = "aaccccccd"
-	test2 = "abcde"
-	print compress(test)
-	print compress(test1)
-	print compress(test2)
+	if len(new_string) > len(input_string):
+		print(input_string)
+		return input_string
+	else:
+		print(new_string)
+		return new_string
+
 
 if __name__ == "__main__":
-	main() 
+    if len(sys.argv) != 2:
+        print("Usage: python 1.5.py input_string")
+    else:
+        compress_string(sys.argv[1])
