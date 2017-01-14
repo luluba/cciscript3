@@ -1,12 +1,11 @@
 #!/usr/bin/python
-import sys
 
 '''
 Is Unique:
 Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data
 structures?
 '''
-
+import sys
 
 def string_has_unique_chars(input_string):
     # Create an dictionary of ascii codes as hash table
@@ -27,3 +26,6 @@ if __name__ == "__main__":
         print "Usage: python 1_1_new.py STRING"
     else:
         string_has_unique_chars(sys.argv[1])
+=======
+'''
+>>>>>>> master

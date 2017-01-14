@@ -35,3 +35,5 @@ if __name__ == "__main__":
         print("Usage: python 1.3.py STRING1 STRING2")
     else:
         are_strings_permutations(sys.argv[1], sys.argv[2])
+
+
