@@ -11,29 +11,3 @@ Input: Tact Coa
 Output: True (permutations: "taco cat", "atco cta", etc.)
 
 '''
-def is_perm_palindrome(t_str):
-	flag = {}
-	for s in t_str:
-		if s == " ":
-			continue
-		if s.lower() in flag:
-			flag[s.lower()] += 1
-		else:
-			flag[s.lower()] = 1
-
-	# no more than 1 character is not even number
-	count = 0
-	for k,v in flag.items():
-		if v % 2 != 0:
-			count += 1
-	if count > 1: return False
-		
-	return True
-
-def main():
-	test = "Tact Coa"
-	print(is_perm_palindrome(test))
-
-if __name__ == "__main__":
-	main()
-	
