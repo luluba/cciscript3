@@ -1,3 +1,11 @@
+Branches
+=====================
+- master: problem only
+- stony：stony solutions
+- mandy: mandy solutions
+
+
+
 WEEKLY SCHEDULE
 ==============================================================================
 
